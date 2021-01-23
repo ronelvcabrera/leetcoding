@@ -3,6 +3,15 @@ class ListNode:
         self.val = val
         self.next = next
 
+
+def listContent(listNode):
+    print('--- CHECKING ---')
+    nextNode = listNode
+    while (nextNode):
+        print(nextNode.val)
+        nextNode = nextNode.next
+    print('-------')
+
 def reverseList(head):
     node = head
     reversed = None
@@ -15,11 +24,14 @@ def reverseList(head):
 
 def reverseListTrack(head):
     prev = None
+    listContent(head)
     while head != None:
+        listContent(prev)
         next = head.next
         head.next = prev
         prev = head
         head = next
+    listContent(prev)
     return prev
 
 def reseseListNode(head):
