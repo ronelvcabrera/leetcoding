@@ -22,10 +22,16 @@ class Solution:
         currentHighest = nums[0]
         for idx, num in enumerate(nums):
             if idx == 0: continue
+            print('num', num)
+            print('streak', num + currentHighest)
+            print('highest', highest)
             currentHighest = max(num, num + currentHighest)
             if currentHighest > highest:
+                print('change highest to = ', currentHighest)
                 highest = currentHighest
+            print("----")
         return highest
 
 solution = Solution()
 print('Answer = ', solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+print('Answer = ', solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4, 13]))
